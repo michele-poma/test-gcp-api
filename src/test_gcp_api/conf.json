@@ -1,0 +1,9 @@
+[
+  {
+    "filename":"input_conf",
+    "extension":"json",
+    "project":"training-gcp",
+    "bucket":"test-gcp-api",
+    "path":"gs://test-gcp-api/input-conf"
+  }
+]

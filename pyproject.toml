@@ -11,7 +11,7 @@ python = "^3.10"
 google-cloud-storage = "^2.10"
 google-cloud-bigquery = "^3.11"
 logging = "^0.4"
-
+pandas = "^2.2"
 
 [build-system]
 requires = ["poetry-core"]

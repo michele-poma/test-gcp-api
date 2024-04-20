@@ -15,6 +15,9 @@ class CloudStorage:
         else:
             return False
 
+    def get_bucket_list(self):
+        return self.client.list_buckets()
+
     def get_content(self, remote_filename):
         """Download remote file"""
         blob = self.bucket.blob(remote_filename)
