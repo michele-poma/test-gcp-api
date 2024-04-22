@@ -5,7 +5,7 @@ from google.cloud import storage
 
 from test_gcp_api.storage_classes.CloudStorage import CloudStorage
 from test_gcp_api.storage_classes.BigQueryStorage import BigQueryStorage
-from test_gcp_api.GenericFile.GenericFile import JsonFile
+from test_gcp_api.genericFile.genericFile import JsonFile
 import test_gcp_api.utils.util  as u
 
 
