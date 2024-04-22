@@ -1,5 +1,7 @@
 from google.cloud import storage
 
+import json
+
 
 class CloudStorage:
     """Cloud Storage Handler"""
@@ -23,6 +25,14 @@ class CloudStorage:
         blob = self.bucket.blob(remote_filename)
         data = blob.download_as_string()
         return data
+
+    def get_content_json(self, remote_filename):
+        """Download remote file"""
+        blob = self.bucket.blob(remote_filename)
+        data = blob.download_as_string()
+        dict_result = json.loads(data)
+        return dict_result
+
 
     def rename(self, filename, newname):
         """Rename a file"""

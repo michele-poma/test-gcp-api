@@ -13,11 +13,11 @@ def main():
 
     logging.basicConfig(level = logging.INFO)
 
-    df = u.get_configuration("configuration/conf.json")
-    logging.info(df.filename)
-    inputFile = JsonFile(df.filename, df.extension, df.project, df.bucket, df.path)
-
-    i = u.read_json_file("configuration/conf.json")
+    # df = u.get_configuration("configuration/conf.json")
+    # logging.info(df.filename)
+    # inputFile = JsonFile(df.filename, df.extension, df.project, df.bucket, df.path)
+    #
+    # i = u.read_json_file("configuration/conf.json")
 
 
     dataset="test_mic"
@@ -29,7 +29,8 @@ def main():
     for bucket in bucket_list: #cloud_storage.client.list_buckets():
         logging.info(bucket.name)
 
-    file_exist = cloud_storage.exists("example.csv")
+    file_exist = cloud_storage.exists("input-conf/input_conf.json")
+    f = cloud_storage.get_content_json("input-conf/input_conf.json")
     logging.error("file: %s exist? %s","test.txt", file_exist)
 
 
