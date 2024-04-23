@@ -52,7 +52,6 @@ def main():
         logging.warning("file: %s doesn t exist!!!", gcp_file)
 
 
-    dataset="test_mic"
     bq = BigQueryStorage("training-gcp-309207","EU")
     dataset_exist = bq.dataset_exist(dataset)
     #logging.error("dataset: {} is present? {}".format(dataset, dataset_exist))
@@ -62,7 +61,7 @@ def main():
         logging.info("dataset: {} is present? {}".format(dataset, dataset_created_exist))
 
     bq.delete_dataset(dataset)
-    logging.info(bq.dataset_exist(dataset))
+    logging.info("dataset: %s exist? %s",dataset,bq.dataset_exist(dataset))
 
 
 if __name__ == "__main__":
