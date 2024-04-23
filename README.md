@@ -1,9 +1,11 @@
 <h1> GCP API </h1>
 
-###INDEX
+### INDEX
 - [Descriprion](#Description)
 - [Requirements](#Requirements)
 - [Installation](#Installation)
+- [Workflow](#Workflow)
+- [Class Diagram](#Class Diagram)
 
 ### Description
 The aim of this repository is that to uses Google Cloud API to test them.
@@ -44,3 +46,13 @@ To create the poetry environment, execute the following command:
 poetry lock
 poetry install
 ```
+
+### Workflow
+<p align="center">
+  <img src="img/workflow.png?raw=true" />
+</p>
+
+### Class Diagram
+<p align="center">
+  <img src="img/classDiagram.png?raw=true" />
+</p>
