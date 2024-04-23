@@ -5,7 +5,7 @@
 - [Requirements](#Requirements)
 - [Installation](#Installation)
 - [Workflow](#Workflow)
-- [Class Diagram](#Class Diagram)
+- [Class Diagram](#ClassDiagram)
 
 ### Description
 The aim of this repository is that to uses Google Cloud API to test them.
@@ -52,7 +52,7 @@ poetry install
   <img src="img/workflow.png?raw=true" />
 </p>
 
-### Class Diagram
+### ClassDiagram
 <p align="center">
   <img src="img/ClassDiagram.png?raw=true" />
 </p>
