@@ -54,5 +54,5 @@ poetry install
 
 ### Class Diagram
 <p align="center">
-  <img src="img/classDiagram.png?raw=true" />
+  <img src="img/ClassDiagram.png?raw=true" />
 </p>
