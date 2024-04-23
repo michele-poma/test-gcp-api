@@ -22,8 +22,9 @@ class BigQueryStorage:
         try:
             dataset = self.client.create_dataset(dataset)
             logging.info("Dataset {} created!!".format(dataset))
-        except e:
+        except Exception as e:
             logging.error("Dataset {} not created!!".format(dataset))
+            logging.error(e)
 
     def dataset_exist(self, dataset_name: str) -> bool:
         """
@@ -35,12 +36,19 @@ class BigQueryStorage:
         """
         try:
             self.client.get_dataset(dataset_name)  # Make an API request.
-            logging.info("Dataset %s already exists", dataset_id)
-            logging.info('The run of this task refers to %s', today_date)
+            logging.info("Dataset %s already exists", dataset_name)
+           # logging.info('The run of this task refers to %s', today_date)
             return True
         except Exception as e:
             logging.warning("Dataset %s is not found",dataset_name)
             return False
+
+    def delete_dataset(self, dataset_id):
+        self.client.delete_dataset(
+            dataset_id, delete_contents=True, not_found_ok=True
+        )
+
+
     def create_table(self, tablename: str):
         """
         create the BQ table
@@ -48,6 +56,10 @@ class BigQueryStorage:
         :param tablename: name of table
         :return:
         """
+        pass
+
+    def delete_table(self, table_id):
+        #client.delete_table(table_id, not_found_ok=True)
         pass
 
     def exist_table(self, tablename: str):
@@ -84,4 +96,5 @@ class BigQueryStorage:
 
     def load_csv(self, csv_file):
         pass
+
 

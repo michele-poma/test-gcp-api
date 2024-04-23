@@ -4,7 +4,7 @@ from test_gcp_api.genericFile.genericFile import GenericFile
 
 class JsonFile(GenericFile):
     def __init__(self, filename, extension, project, bucket, path):
-        super.__init__()
+        super().__init__(filename,extension,project,bucket,path)
 
     def file_exist(self,filename):
         pass
