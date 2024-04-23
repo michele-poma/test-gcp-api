@@ -5,7 +5,7 @@
 - [Requirements](#Requirements)
 - [Installation](#Installation)
 - [Workflow](#Workflow)
-- [Class Diagram](#Class Diagram)
+- [Class Diagram](#ClassDiagram)
 
 ### Description
 The aim of this repository is that to uses Google Cloud API to test them.
