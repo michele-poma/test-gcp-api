@@ -47,6 +47,7 @@ class BigQueryStorage:
         self.client.delete_dataset(
             dataset_id, delete_contents=True, not_found_ok=True
         )
+        logging.info("Dataset {} deleted!!".format(dataset_id))
 
 
     def create_table(self, tablename: str):
