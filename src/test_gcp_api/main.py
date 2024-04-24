@@ -15,6 +15,7 @@ def main():
     logging.basicConfig(level = logging.INFO)
 
     logging.info("********** Reading file configuration **********")
+    #TODO PASS ARGUMENTS TO PYTHON SCRIPT
     df = u.read_json_file("configuration/conf.json")
     a = [df[i] if (df[i].get('filename')=='input_conf') else df[0] for i in range(len(df))][0]
 
@@ -57,15 +58,28 @@ def main():
     else:
         logging.warning("file: %s doesn t exist!!!", gcp_file)
 
-    bq_filename = input_data_conf['filename']
-    bq_file_extension = input_data_conf['extension']
-    bq_file_created = input_data_conf['created']
-    bq_project = input_data_conf['bq_project']
-    bq_bucket = input_data_conf['bucket']
-    bq_path = input_data_conf['path']
-    bq_dataset = input_data_conf['dataset']
-    bq_table = input_data_conf['table']
-    bq_dag = input_data_conf['dag']
+    bq_filename = input_data_conf.get('filename',None)
+    bq_file_extension = input_data_conf.get('extension',None)
+    bq_file_created = input_data_conf.get('created',None)
+    bq_project = input_data_conf.get('bq_project',None)
+    bq_bucket = input_data_conf.get('bucket',None)
+    bq_path = input_data_conf.get('path',None)
+    bq_dataset = input_data_conf.get('dataset',None)
+    bq_table = input_data_conf.get('table',None)
+    bq_dag = input_data_conf.get('dag',None)
+
+    logging.info("********************************************************")
+    logging.info("* BQ Variable Set:                        ")
+    logging.info("*               bq_FileName: %s           ", bq_filename)
+    logging.info("*               bq_extension: %s          ", bq_file_extension)
+    logging.info("*               bq_file_created: %s            ", bq_file_created)
+    logging.info("*               bq_project: %s             ", bq_project)
+    logging.info("*               bq_bucket: %s               ", bq_bucket)
+    logging.info("*               bq_path: %s               ", bq_path)
+    logging.info("*               bq_dataset: %s               ", bq_dataset)
+    logging.info("*               bq_table: %s               ", bq_table)
+    logging.info("*               bq_dag: %s               ", bq_dag)
+    logging.info("********************************************************")
 
     #bq = BigQueryStorage("training-gcp-309207","EU")
     bq = BigQueryStorage(bq_project,"EU")
